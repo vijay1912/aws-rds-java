@@ -38,8 +38,8 @@ jobs:
       uses: mr-smithers-excellent/docker-build-push@v4
       with:
         image: vijay-demo-app
-        tag: master-cae25e0
+        tags: master-${{ github.sha }}
         registry: docker.io
-        dockerfile: Dockerfile
+        dockerfile: ./docker/Dockerfile  # <-- update this path if needed
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
